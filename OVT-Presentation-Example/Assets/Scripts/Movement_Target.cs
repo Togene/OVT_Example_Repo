@@ -57,6 +57,8 @@ public class Movement_Target : MonoBehaviour
 
             if (Mathf.Abs((transform.position - MoveTarget.position).magnitude) < transitionThreshold)
             {
+                transform.position = MoveTarget.position;
+
                 if (State_Manager.CurrentGlobalStates == States.GOINGINSPLITOVERVIEW)
                     State_Manager.CurrentGlobalStates = States.SPLITOVERVIEW;
                 else if (State_Manager.CurrentGlobalStates == States.GOINGINSPLITSELECTION)
@@ -82,7 +84,8 @@ public class Movement_Target : MonoBehaviour
 
                 if (Mathf.Abs((transform.position - CurrentCameraPosition).magnitude) < transitionThreshold)
                 {
-                        State_Manager.CurrentGlobalStates = States.LOOKING;
+                    transform.position = CurrentCameraPosition;
+                    State_Manager.CurrentGlobalStates = States.LOOKING;
                 }
 
             }
@@ -93,7 +96,8 @@ public class Movement_Target : MonoBehaviour
 
                 if (Mathf.Abs((transform.position - CurrentCameraParentMovePosition).magnitude) < transitionThreshold)
                 {
-                        State_Manager.CurrentGlobalStates = States.SPLITOVERVIEW;
+                    transform.position = CurrentCameraParentMovePosition;
+                    State_Manager.CurrentGlobalStates = States.SPLITOVERVIEW;
                 }
             }
 

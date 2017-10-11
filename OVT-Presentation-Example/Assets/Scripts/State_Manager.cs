@@ -50,5 +50,13 @@ public class State_Manager : MonoBehaviour {
                 CurrentGlobalStates = States.GOINGBACKSPLITSELECTION;
             }
         }
+
+        if(CurrentGlobalStates == States.LOOKING)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Application.Quit();
+            }
+        }
     }
 }

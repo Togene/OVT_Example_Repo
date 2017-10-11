@@ -77,16 +77,16 @@ public static class g_utils
    //     return g_utils.distanceXY(x, y, circx, circy) < radius;
    // }
    //
-   // public static bool pointInRect(float x, float y, g_rect rect)
-   // {
-   //     //x range check
-   //     //y range check
-   //     //if both are true the point is inside the range
-   //
-   //     return g_utils.inRange(x, rect.p1.x, rect.p2.x) &&
-   //            g_utils.inRange(y, rect.p1.y, rect.p2.y);
-   // }
-
+   public static bool pointInRect(float x, float y, Vector2 p1, Vector2 p2)
+   {
+       //x range check
+       //y range check
+       //if both are true the point is inside the range
+  
+       return g_utils.inRange(x, p1.x, p2.x) &&
+              g_utils.inRange(y, p1.y, p2.y);
+   }
+        
     public static bool inRange(float value, float min, float max)
     {
 
